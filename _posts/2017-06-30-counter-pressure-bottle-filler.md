@@ -44,11 +44,12 @@ then 6mm wood drill bits from the small side.
 ![Needle for gas release](/img/bottle_filler/needle.jpg){:class="right"} The needle needs to poke through the stopper
  to let gas out.
 
-![Picnic tap attachment](/img/bottle_filler/picnic_tap.jpg){:class="right"} The hard beer line fits snugly into a
-picnic tap.
+The hard beer line fits snugly into a picnic tap.
 
 Inspiration for this project:
  - [byo.com](http://byo.com/hops/item/361-build-a-counter-pressure-bottle-filler-projects)
  - [www.homebrewtalk.com](http://www.homebrewtalk.com/showthread.php?t=27171)
 
-![Filler in action](/img/bottle_filler/filling.jpg){:class="right"} And we have beer in the bottle!
+![Picnic tap attachment](/img/bottle_filler/picnic_tap.jpg){:class="right"} 
+![Filler in action](/img/bottle_filler/filling.jpg){:class="right"} 
+And we have beer in the bottle!
