@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bottle Counter Pressure Filler"
+title:  "Counter Pressure Bottle Filler"
 date:   2017-06-30 10:16:10 +0200
 categories: kegging
 ---
@@ -19,29 +19,36 @@ the bottle, the valve opened to fill with gas with finger over the needle, valve
 gradually released to fill the bottle with beer.
 
 Parts list:
- - Bevlex 200 3/16 thick walled beer line (from [Keg Solutions](http://www.kegsolutions.co.za/products))
- - 3/8" outer diameter hard gas/beer line (from [SDS](https://dispense.co.za/shop/brewmaster-38-od-clear/))
- - Shut-off valve 3/8" pushfitting (from [SDS](https://dispense.co.za/shop/38-shut-off-valve/))
- - 3/16 equal tee pushfitting (from [SDS](https://dispense.co.za/shop/316-equal-tee/))
- - 17mm top diameter rubber stopper (from lab/science supply shop)
+ - Bevlex 200 3/16 thick walled beer line
+ - 3/8" outer diameter hard gas/beer line
+ - Shut-off valve 3/8" pushfitting
+ - 3/16 equal tee pushfitting
+ - 17mm top diameter rubber stopper
  - 7mm outer diameter 25cm hollow steel tube (not sure where to get this, got some from a fellow brewer)
- - Needle (from pharmacy)
+ - Needle
+ 
+![Drilling the stopper](/img/bottle_filler/drill_stopper.jpg){:class="right"} Suppliers:
+ - [Keg Solutions](http://www.kegsolutions.co.za/products)
+ - [Specialised Dispense Systems](https://dispense.co.za/shop/brewmaster-38-od-clear/)
+ - Lab/Science supply shop (stopper)
+ - Pharmacy (needle)
  
 The thick walled beer line is more expensive than the thin gas/beer line but more flexible making the filler and
 bottle easier to handle. You could probably skip the steel tube and just use hard gas/beer line instead. It needs to
 get within a couple of centimeters of the bottom of the bottle. The soft beer line fits over the hard stuff if you 
 heat it up with boiling water. Likewise the hard beer line fits over the steel tube in the same way.
 
-![Drilling the stopper](/img/bottle_filler/drill_stopper.jpg){:class="right"} I drilled the stopper using 4mm, 5mm and 
+I drilled the stopper using 4mm, 5mm and 
 then 6mm wood drill bits from the small side.
 
 ![Needle for gas release](/img/bottle_filler/needle.jpg){:class="right"} The needle needs to poke through the stopper
  to let gas out.
 
-![Picnic tap attachment](/img/bottle_filler/picnic_tap.jpg)
-
-![Filler in action](/img/bottle_filler/filling.jpg)
+![Picnic tap attachment](/img/bottle_filler/picnic_tap.jpg){:class="right"} The hard beer line fits snugly into a
+picnic tap.
 
 Inspiration for this project:
- - [http://byo.com](http://byo.com/hops/item/361-build-a-counter-pressure-bottle-filler-projects)
- - [http://www.homebrewtalk.com](http://www.homebrewtalk.com/showthread.php?t=27171)
+ - [byo.com](http://byo.com/hops/item/361-build-a-counter-pressure-bottle-filler-projects)
+ - [www.homebrewtalk.com](http://www.homebrewtalk.com/showthread.php?t=27171)
+
+![Filler in action](/img/bottle_filler/filling.jpg){:class="right"} And we have beer in the bottle!

@@ -5,11 +5,17 @@
 
 .right { float: right }
 
-img.right { margin-left: 20px }
+img.right {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
 
 .left { float: left }
 
-img.left { margin-right: 20px }
+img.left {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
 .clr { clear: both }
 
