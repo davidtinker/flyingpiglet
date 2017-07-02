@@ -13,7 +13,7 @@ the c02 to fill the bottle with beer and cap. Because the pressure in the bottle
 same as the keg there is very little foaming and minimal loss of carbonation.
 
 ![Simple Counter Pressure Filler](/img/bottle_filler/complete_assembly.jpg){:class="right"} I built a filler after 
-reviewing a few designs and simplifying things wherever I could. The left hand side is
+looking at a few designs online. The left hand side is
 connected to my regulator and the right hand side to a picnic tap attached to the keg. The spike is inserted into
 the bottle, the valve opened to fill with gas with finger over the needle, valve closed, picnic tap opened and gas
 gradually released to fill the bottle with beer.
