@@ -23,6 +23,8 @@ url: "http://www.flyingpiglet.co.za"
 twitter_username: david_tinker
 github_username:  davidtinker
 
+google_analytics: UA-102429704-1
+
 # Build settings
 markdown: kramdown
 theme: minima
