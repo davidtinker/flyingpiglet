@@ -3,6 +3,43 @@
 
 @import "{{ site.theme }}";
 
+.site-header {
+  border-top: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.site-title {
+  font-size: 42px;
+
+  img {
+    height: 64px;
+  }
+
+  span {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.site-nav .page-link {
+  font-size: 20px;
+  line-height: 3.0;
+}
+
+img.fliph {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
 .right { float: right }
 
 img.right {

@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Flying Piglet Brewery
+author: David Tinker
 email: david.tinker@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This site describes David's home brewery and how the various bits and pieces have been put together.
@@ -25,7 +26,7 @@ github_username:  davidtinker
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 
 permalink: /:categories/:title
