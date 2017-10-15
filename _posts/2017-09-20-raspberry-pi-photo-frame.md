@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Raspberry Pi Photo Frame"
-date:   2017-06-30 10:16:10 +0200
+date:   2017-09-20 10:16:10 +0200
 categories: electronics
 ---
 
