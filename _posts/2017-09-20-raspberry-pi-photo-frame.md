@@ -9,6 +9,8 @@ Its not hard to turn a Raspberry Pi Zero Wifi edition and a cheap TV or monitor 
 edition uses a motion sensor and infrared LED to turn the TV on only when people are around to look at it. 
 Scripting its done with Node.js.
 
+![Photo Frame](/img/photo_frame/photo_frame.jpg)
+
 Parts list:
  - [Raspberry Pi Zero Wireless](https://www.pishop.co.za/store/raspberry-pi-zero/raspberry-pi-zero-wireless)
  - [Power Supply](https://www.pishop.co.za/store/rpi-power/raspberry-pi-official-universal-power-supply--51v-25a-white)
