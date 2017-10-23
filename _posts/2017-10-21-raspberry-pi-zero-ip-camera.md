@@ -15,9 +15,9 @@ Parts list:
  - [USB A male to USB micro B male 1.5m](https://www.pishop.co.za/store/usb-a-male-to-usb-micro-b-male)
  - [Logitech C170 Webcam](https://www.takealot.com/logitech-c170-webcam/PLID41503598)
  - [SD Card](https://www.pishop.co.za/store/index.php?rt=product/product&product_id=455)
+ - [USB A Female to Male micro B cable](https://www.pishop.co.za/store/universal-micro-usb-2-5-pin-usb-female-to-male-micro-usb-adapter)
 
 These additional items are needed to setup the Pi:
- - [USB A Female to Male micro B cable](https://www.pishop.co.za/store/universal-micro-usb-2-5-pin-usb-female-to-male-micro-usb-adapter)
  - [Mini HDMI to HDMI Cable 1m V1.4](https://www.pishop.co.za/store/mini-hdmi-to-hdmi-cable-1m-v14-zero)
 
 You could use a Pi specific camera but the USB webcam works a lot better in low light. Any camera compatible with
