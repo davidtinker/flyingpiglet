@@ -1,13 +1,16 @@
 ---
 layout: post
-title:  "Raspberry Pi Zero IP Camera"
+title:  "Secure Raspberry Pi Zero IP Camera"
 date:   2017-10-21 10:50:10 +0200
 categories: electronics
 ---
 
-A Raspberry Pi Zero Wifi edition and a USB webcam are all you need to setup a simple IP camera.
+A Raspberry Pi Zero Wifi edition and a USB webcam are all you need to setup a simple IP camera accessible from
+anywhere on the internet securely over HTTPS.
 
-![Photo Frame](/img/ip_camera/motioneye.jpg)
+![MotionEye](/img/ip_camera/motioneye.jpg)
+
+(Note the 2 beer taps, I have 6 more in the laundry!)
 
 Parts list:
  - [Raspberry Pi Zero Wireless](https://www.pishop.co.za/store/raspberry-pi-zero/raspberry-pi-zero-wireless)
@@ -31,6 +34,21 @@ on your Wifi network. I had to toggle between using the keyboard and mouse since
 and I didn't have a suitable hub. You should configure your Wifi router to give the Pi a fixed IP address as
 this will make [connecting to it with ssh](https://www.raspberrypi.org/documentation/remote-access/ssh/) and
 remote access from the web possible.
+
+If you the camera is going to be on a different Wifi network to the one you are currently using then you can
+add extra networks to /etc/wpa_supplicant/wpa_supplicant.conf:
+
+    network={
+        ssid="YOURNETWORK"
+        psk="password"
+        key_mgmt=WPA-PSK
+    }
+    
+    network={
+        ssid="OTHERNETWORK"
+        psk="verysecret"
+        key_mgmt=WPA-PSK
+    }
 
 ## Install MotionEye
 
@@ -58,7 +76,7 @@ remote access from the web possible.
 Now browse to http://(Pi IP address):8765/ and login as 'admin' with no password. Configure a password and add
 your camera.
 
-## Configure Dynamic DNS and Port Forwarding
+## Configure Dynamic DNS
 
 Create a free account on [Dynu.com](https://www.dynu.com/en-US/). Go to "DDNS Services" in the control panel and
 add a domain. Now setup ddclient to keep your external IP address in sync:
@@ -87,6 +105,80 @@ Restart ddclient to pickup changes:
 Check that your external IP address is showing up in "DDNS Services" in the control panel. Now configure your router
 to forward port 80 to port 8765 and the IP address of the Pi.
 
-You should now be able to get to the camera from outside your network using its DDNS domain name.
+You should now be able to get to the camera from outside your network using its DDNS domain name. If you are not
+concerned about random people in coffee shops being able to access your camera then you can skip the next section.
 
-It would be nice to get this all working over https.
+## Configure HTTPS
+
+The setup described above is simple but your username and password are transmitted over the internet in clear
+text when you login. So I would advise configuring HTTPS access. This involves
+installing [nginx webserver](https://www.nginx.com), [certbot](https://certbot.eff.org) to manage free 
+certificates issued by [Let’s Encrypt](https://letsencrypt.org) and configuring an nginx virtual host to
+proxy MotionEye.
+
+Install nginx and certbot:
+
+    $ sudo bash
+    $ apt-get install nginx
+    $ apt-get install certbot
+    $ apt-get install python-certbot-nginx
+
+Configure port forwarding on your router to forward port 80 and 443 to ports 80 and 443 on your Pi. You should
+be able to browse to your DDNS name and see the "Welcome to nginx!" default site.
+
+Create virtual host for your site by placing a file with the same name as your DDNS name (e.g. example.com) in 
+/etc/nginx/sites-available/:
+
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name example.com;
+        root /var/www/example.com;
+        index index.html;
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+        
+        location /cams/ {
+            proxy_pass http://127.0.0.1:8765/;
+            proxy_read_timeout 120s;
+            access_log off;
+        }
+        
+        rewrite ^/$ $scheme://$host/cams/ redirect;
+    }
+    
+Replace example.com with your DDNS name. The "location /cams/" section 
+[proxies MotionEye](https://github.com/ccrisan/motioneye/wiki/Running-Behind-Nginx). 
+
+Create your content root directory:
+
+    $ mkdir /var/www/example.com
+    
+Enable your new site by creating a symlink in /etc/nginx/sites-enabled:
+    
+    $ cd /etc/nginx/sites-enabled
+    $ ln -s ../sites-available/example.com
+    $ service nginx restart
+    
+Make sure you can browse to your site using your DDNS domain and see the MotionEye login prompt.
+
+Configure certbot and get a certificate:
+
+    $ sudo bash
+    $ certbot --nginx
+    
+Answer the prompts. Now you should be able to get to MotionEye securely e.g. https://example.com/cams/
+
+You should remove the port 80 forwarding from your router configuration.
+
+Finally setup a cron to renew your certificate before it expires:
+
+    $ sudo bash
+    $ crontab -e
+    
+Paste in the following line:
+
+    43 6 * * * certbot renew --post-hook "systemctl reload nginx"
+    
